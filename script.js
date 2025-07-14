@@ -556,9 +556,9 @@ function drawCard() {
 
   image.src = `${card.image}`;
   image.style.transform = orientation === "reversed" ? "rotate(180deg)" : "rotate(0deg)";
-  image.alt = `${card.name} - ${card.character || ''}`;
+  image.alt = `${card.name}`;
 
-  let html = `<p><strong>${card.name}${card.character ? ' - ' + card.character : ''} (${orientation.charAt(0).toUpperCase() + orientation.slice(1)})</strong></p>`;
+  let html = `<p><strong>${card.name} (${orientation.charAt(0).toUpperCase() + orientation.slice(1)})</strong></p>`;
   if (card.blurb) html += `<p>${card.blurb}</p>`;
   html += `<p>${card[orientation]}</p>`;
 
@@ -577,7 +577,7 @@ function drawThreeCards() {
     const meaning = orientation === "upright" ? card.upright : card.reversed;
 
     const cardHtml = `
-      <img src="${card.image}" alt="${card.name} - ${card.character}" style="max-width: 100%; height: auto;">
+      <img src="${card.image}" alt="${card.name}" style="max-width: 100%; height: auto;">
       <h2>${card.name} - ${card.character}</h2>
       <p><strong>${orientation.charAt(0).toUpperCase() + orientation.slice(1)}:</strong> ${meaning}</p>
     `;
