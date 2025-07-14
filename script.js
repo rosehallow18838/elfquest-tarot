@@ -568,7 +568,7 @@ function drawThreeCards() {
   document.getElementById("card2").innerHTML = "";
   document.getElementById("card3").innerHTML = "";
 
-  const shuffled = tarotCards.sort(() => 0.5 - Math.random());
+  const shuffled = cards.sort(() => 0.5 - Math.random());
   const spread = shuffled.slice(0, 3);
 
   spread.forEach((card, index) => {
