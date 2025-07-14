@@ -577,8 +577,8 @@ function drawThreeCards() {
     const meaning = orientation === "upright" ? card.upright : card.reversed;
 
     const cardHtml = `
-      <img src="${card.image}" alt="${card.name}" style="max-width: 100%; height: auto;">
-      <h2>${card.name} - ${card.character}</h2>
+      <img src="${card.image}" alt="${card.name}" style="max-width: 100%; height: auto; transform: ${orientation === "reversed" ? "rotate(180deg)" : "none"};">
+      <h2>${card.name} (${orientation.charAt(0).toUpperCase() + orientation.slice(1)})</h2>
       <p><strong>${orientation.charAt(0).toUpperCase() + orientation.slice(1)}:</strong> ${meaning}</p>
     `;
 
