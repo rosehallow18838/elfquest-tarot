@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,35 +8,47 @@
   <style>
     body {
       font-family: 'Georgia', serif;
-      background-color: #f4f4f4;
-      padding: 20px;
+      background-color: #f9f4ef;
+      padding: 30px;
       text-align: center;
     }
     #tarot-image {
       max-width: 300px;
       margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
     #card-description {
       background: white;
-      margin: 20px auto;
-      max-width: 700px;
-      padding: 20px;
-      border-radius: 10px;
+      margin: 30px auto;
+      max-width: 800px;
+      padding: 25px;
+      border-radius: 12px;
       text-align: left;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      font-size: 16px;
+      line-height: 1.6;
     }
     button {
-      font-size: 16px;
-      padding: 10px 20px;
+      font-size: 18px;
+      padding: 12px 24px;
+      background-color: #50276f;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+    }
+    button:hover {
+      background-color: #6b3a94;
     }
   </style>
 </head>
 <body>
   <h1>Elfquest Tarot</h1>
+  <p>Click the button below to draw a card from the deck and receive your insight.</p>
   <button onclick="drawCard()">Draw a Card</button>
   <div>
-    <img id="tarot-image" src="" alt="Elfquest Tarot Card"/>
+    <img id="tarot-image" src="" alt="Elfquest Tarot Card" />
   </div>
   <div id="card-description"></div>
   <script src="script.js"></script>
