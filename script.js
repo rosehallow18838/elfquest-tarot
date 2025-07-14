@@ -563,3 +563,24 @@ function drawCard() {
 
   description.innerHTML = html;
 }
+function drawThreeCards() {
+  document.getElementById("card1").innerHTML = "";
+  document.getElementById("card2").innerHTML = "";
+  document.getElementById("card3").innerHTML = "";
+
+  const shuffled = tarotCards.sort(() => 0.5 - Math.random());
+  const spread = shuffled.slice(0, 3);
+
+  spread.forEach((card, index) => {
+    const orientation = Math.random() < 0.5 ? "upright" : "reversed";
+    const meaning = orientation === "upright" ? card.upright : card.reversed;
+
+    const cardHtml = `
+      <img src="images/${card.image}" alt="${card.name} - ${card.character}" style="max-width: 100%; height: auto;">
+      <h2>${card.name} - ${card.character}</h2>
+      <p><strong>${orientation.charAt(0).toUpperCase() + orientation.slice(1)}:</strong> ${meaning}</p>
+    `;
+
+    document.getElementById(`card${index + 1}`).innerHTML = cardHtml;
+  });
+}
