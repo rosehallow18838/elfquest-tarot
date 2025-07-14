@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Elfquest Tarot</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+    }
+    button {
+      font-size: 1.2em;
+      padding: 10px 20px;
+      margin-top: 20px;
+    }
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+    }
+    .card-description {
+      margin: 30px auto;
+      max-width: 700px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h1>Elfquest Tarot</h1>
+  <button onclick="drawCard()">Draw a Card</button>
+  <div>
+    <img id="card-image" src="" alt="Elfquest Tarot Card" style="display: none;" />
+  </div>
+  <div id="card-description" class="card-description"></div>
 
+  <script src="script.js"></script>
+</body>
+</html>
