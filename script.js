@@ -554,11 +554,11 @@ function drawCard() {
   const image = document.getElementById("tarot-image");
   const description = document.getElementById("card-description");
 
-  image.src = `images/${card.image}`;
-image.style.transform = orientation === "reversed" ? "rotate(180deg)" : "rotate(0deg)";
-  image.alt = card.name;
+  image.src = `${card.image}`;
+  image.style.transform = orientation === "reversed" ? "rotate(180deg)" : "rotate(0deg)";
+  image.alt = `${card.name} - ${card.character || ''}`;
 
-  let html = `<p><strong>${card.name} (${orientation.charAt(0).toUpperCase() + orientation.slice(1)})</strong></p>`;
+  let html = `<p><strong>${card.name}${card.character ? ' - ' + card.character : ''} (${orientation.charAt(0).toUpperCase() + orientation.slice(1)})</strong></p>`;
   if (card.blurb) html += `<p>${card.blurb}</p>`;
   html += `<p>${card[orientation]}</p>`;
 
