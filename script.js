@@ -550,16 +550,16 @@ const cards = [
 
 function drawCard() {
   const card = cards[Math.floor(Math.random() * cards.length)];
+  const orientation = Math.random() < 0.5 ? "upright" : "reversed";
   const image = document.getElementById("tarot-image");
   const description = document.getElementById("card-description");
 
   image.src = card.image;
   image.alt = card.name;
 
-  let html = `<p><strong>${card.name}</strong></p>`;
+  let html = `<p><strong>${card.name} (${orientation.charAt(0).toUpperCase() + orientation.slice(1)})</strong></p>`;
   if (card.blurb) html += `<p>${card.blurb}</p>`;
-  html += `<p><em>Upright:</em> ${card.upright}</p>`;
-  html += `<p><em>Reversed:</em> ${card.reversed}</p>`;
+  html += `<p>${card[orientation]}</p>`;
 
   description.innerHTML = html;
 }
